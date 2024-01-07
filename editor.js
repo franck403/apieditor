@@ -26,7 +26,7 @@ window.onmessage = function (e) {
             });
             editor.onDidChangeModelContent(function (e) {
                 e = monaco.editor.getEditors()[0].getValue()
-                window.top.postMessage('u' + e, '*')
+                window.parent.postMessage('u' + e, '*')
             });
         });
 
