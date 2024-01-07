@@ -33,4 +33,4 @@ window.onmessage = function (e) {
     }
 };
 
-window.top.postMessage('file', '*')
+window.parent.postMessage('file', '*')
