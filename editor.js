@@ -1,7 +1,8 @@
 // api
 window.onmessage = function (e) {
-    if (e.data.slice(0, 4) == 'file') {
-        window.actvalue = e.data.slice(5,e.data.length)
+    var content = e.data
+    if (content.slice(0, 4) == 'file') {
+        window.actvalue = content.slice(5,e.data.length)
         require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.39.0/min/vs' } });
         require(['vs/editor/editor.main'], function () {
             monaco.editor.setTheme(
@@ -26,7 +27,7 @@ window.onmessage = function (e) {
             });
             editor.onDidChangeModelContent(function (e) {
                 e = monaco.editor.getEditors()[0].getValue()
-                window.parent.postMessage('u' + e, '*')
+                window.top.postMessage('u' + e, '*')
             });
         });
 
