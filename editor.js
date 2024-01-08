@@ -15,6 +15,7 @@ window.onmessage = function (e) {
                 value: window.actvalue,
                 language: 'javascript',
                 fontSize: "20px",
+                automaticLayout: true,
                 theme: 'vs-dark'
             });
             monaco.languages.registerCompletionItemProvider('javascript', {
