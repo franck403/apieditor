@@ -1,6 +1,8 @@
 // api
 window.onmessage = function (e) {
     var content = e.data
+    console.log(content)
+    console.log(typeof(content))
     if (content.slice(0, 4) == 'file') {
         window.actvalue = content.slice(5,e.data.length)
         require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.39.0/min/vs' } });
