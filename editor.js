@@ -8,6 +8,10 @@ window.onmessage = function (e) {
         window.actvalue = content.slice(5,e.data.length)
         require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.39.0/min/vs' } });
         require(['vs/editor/editor.main'], function () {
+            var onend = monaco.editor.onDidCreateEditor(function (event) {
+        		console.log('apieditor is ready to use');
+                window.parent.postMessage('ready', '*')
+        	});
             monaco.editor.setTheme(
                 'dark'
             )
