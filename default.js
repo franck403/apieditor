@@ -12,6 +12,7 @@ window.onmessage = function (e) {
                 value: window.actvalue,
                 language: 'repviewer',
                 fontSize: "20px",
+                automaticLayout: true,
                 theme: 'vs-dark'
             });
             editor.onDidChangeModelContent(function (e) {
