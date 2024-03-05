@@ -10,6 +10,7 @@ window.onmessage = function (e) {
             )
             var editor = monaco.editor.create(document.getElementById('container'), {
                 value: window.actvalue,
+                language: 'repviewer',
                 fontSize: "20px",
                 theme: 'vs-dark'
             });
